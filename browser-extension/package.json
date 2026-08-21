@@ -1,0 +1,30 @@
+{
+  "name": "chatgpt-cursor-bridge-extension",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome/Edge MV3 extension bridging ChatGPT to the local ChatGPT Cursor Bridge service.",
+  "scripts": {
+    "dev": "CCB_TARGET=content vite build --watch",
+    "build": "tsc --noEmit && CCB_TARGET=content vite build && CCB_TARGET=background vite build",
+    "release": "bash ../release/build-release.sh",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.287",
+    "@types/node": "22.19.15",
+    "jsdom": "25.0.1",
+    "typescript": "5.9.3",
+    "vite": "6.0.7",
+    "vitest": "2.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laolaola278-dev/chatgpt-cursor-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laolaola278-dev/chatgpt-cursor-bridge/issues"
+  },
+  "homepage": "https://github.com/laolaola278-dev/chatgpt-cursor-bridge#readme"
+}

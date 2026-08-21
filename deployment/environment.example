@@ -1,0 +1,7 @@
+BRIDGE_HOST=0.0.0.0
+BRIDGE_PORT=8765
+WORKSPACE_ROOT=../workspace/projects
+LOG_PATH=../workspace/logs
+MEMORY_ROOT=../workspace/memory
+APPROVAL_DB_PATH=../workspace/approvals/approvals.db
+# Provider adapters are metadata-only in Phase 18; no API keys are read or required.

@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Runtime / workspace state (local bridge data, databases, snapshots)
+workspace/
+
+# Build outputs
+.next/
+out/
+dist/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db

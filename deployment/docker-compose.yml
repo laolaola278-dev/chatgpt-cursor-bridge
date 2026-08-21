@@ -1,0 +1,31 @@
+services:
+  local-bridge:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8765:8765"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    environment:
+      BRIDGE_HOST: 0.0.0.0
+      BRIDGE_PORT: 8765
+      WORKSPACE_ROOT: /workspace/projects
+      LOG_PATH: /workspace/logs
+    volumes:
+      - ../workspace:/workspace
+  database:
+    image: alpine:3.20
+    profiles: ["optional"]
+    command: ["sh", "-c", "echo SQLite files are managed by local-bridge"]
+  extension-build:
+    image: node:22-slim
+    profiles: ["optional"]
+    working_dir: /src/browser-extension
+    volumes:
+      - ../browser-extension:/src/browser-extension
+    command: ["sh", "-c", "npm ci && npm run build"]

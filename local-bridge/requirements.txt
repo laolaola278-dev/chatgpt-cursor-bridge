@@ -1,0 +1,10 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+python-dotenv==1.0.1
+pytest==8.3.4
+httpx==0.28.1
+# Phase 32: AES-256-GCM envelope encryption for stored provider API keys.
+# There is no plaintext fallback; the assistant secret store is unavailable
+# (HTTP 503) when this package is missing.
+cryptography==49.0.0

@@ -1,0 +1,1 @@
+"""Safe Git integration package."""
